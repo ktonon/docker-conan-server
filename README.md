@@ -1,5 +1,7 @@
 # docker-conan-server
 
+[![Conan Version](https://img.shields.io/badge/Conan-0.30.2-blue.svg)](https://hub.docker.com/r/ktonon/conan-server/tags/)
+
 Docker image definition for a [Conan.io](https://conan.io) server
 
 ## Running the server
@@ -11,7 +13,7 @@ docker run \
     -p 9300:9300 \
     -v conan_server:/var/lib/conan \
     --name conan_server \
-    dkruger/conan-server:latest
+    ktonon/conan-server:latest
 ```
 
 The configure the server by editting the `.conan_server/server.conf`
@@ -23,10 +25,10 @@ For more information of the server.conf, see the http://conanio.readthedocs.io/e
 ## Example docker-compose.yml file
 
 ```
-version: '2' 
+version: '2'
 services:
   conan:
-    image: cguenther/conan-server
+    image: ktonon/conan-server
     container_name: conan
     volumes:
       - ./conan:/var/lib/conan
